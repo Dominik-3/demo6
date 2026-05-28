@@ -1,0 +1,15 @@
+
+<h1>Kontakty</h1>
+
+<p *ngIf="loading">Načítání...</p>
+<p *ngIf="error" style="color: red">{{ error }}</p>
+
+<table *ngIf="!loading && !error" border="1" cellpadding="8">
+  <tbody>
+  <tr *ngFor="let contakt of contakts">
+    <td>{{ contakt.name }}</td>
+    <td>{{ contakt.email }}</td>
+    <td>{{ contakt.phone }}</td>
+  </tr>
+  </tbody>
+</table>

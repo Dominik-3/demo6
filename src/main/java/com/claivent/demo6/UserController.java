@@ -1,6 +1,4 @@
 package com.claivent.demo6;
-
-
 import com.claivent.demo6.model.User;
 import java.util.List;
 import org.springframework.stereotype.Controller;
@@ -30,7 +28,5 @@ public class UserController {
   public List<User> usersApi(){
     return userServices.getUsers();
 }
-
-
 
 }

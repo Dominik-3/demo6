@@ -5,12 +5,12 @@ import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-contakt.component',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './contakt.component.html',
   styleUrl: './contakt.component.css',
   standalone: true
 })
-export class ContaktComponent {
+export class ContaktComponent implements OnInit{
   contakts: Contakt[] = [];
   error: string | null = null;
   loading = true;

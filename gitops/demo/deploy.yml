@@ -16,7 +16,7 @@ spec:
         app: dominik
     spec:
       containers:
-        - name: nginx
+        - name: dominik
           image: ghcr.io/dominik-3/praxe-demo67:latest
           ports:
             - containerPort: 8080

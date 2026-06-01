@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build and Push Frontend Docker Image
 
 on:
   push:
@@ -32,9 +32,9 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./src/main/frontend
           push: true
           # Zde místo github.repository_owner použijeme novou proměnnou env.OWNER_LOWER
           tags: |
-            ghcr.io/${{ env.OWNER_LOWER }}/praxe-demo67:${{ env.TAG }}
-            ghcr.io/${{ env.OWNER_LOWER }}/praxe-demo67:latest
+            ghcr.io/${{ env.OWNER_LOWER }}/praxe-frontend:${{ env.TAG }}
+            ghcr.io/${{ env.OWNER_LOWER }}/praxe-frontend:latest

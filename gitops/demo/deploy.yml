@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dominik
+  namespace: praxe2026
+  labels:
+    app: dominik
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dominik
+  template:
+    metadata:
+      labels:
+        app: dominik
+    spec:
+      containers:
+        - name: nginx
+          image: ghcr.io/dominik-3/praxe-demo67:latest
+          ports:
+            - containerPort: 8080

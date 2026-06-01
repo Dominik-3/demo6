@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dominik-fe
+  namespace: praxe2026
+  labels:
+    app: dominik-fe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dominik-fe
+  template:
+    metadata:
+      labels:
+        app: dominik-fe
+    spec:
+      containers:
+        - name: dominik-fe
+          image: ghcr.io/dominik-3/praxe-demo67:latest
+          ports:
+            - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: dominik-svc
+  namespace: praxe2026
+  labels:
+    app: dominik-fe
+spec:
+  selector:
+    app: dominik-fe
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

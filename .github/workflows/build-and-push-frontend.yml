@@ -22,14 +22,18 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_TOKEN }}
 
-      - name: Set image tag
-        run: echo "TAG=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      # Převeď jméno vlastníka na lowercase a získej krátký SHA commitu
+      - name: Set environment variables
+        run: |
+          echo "OWNER_LOWER=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+          echo "TAG=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: ./src/main/frontend
           push: true
+          # Zde místo github.repository_owner použijeme novou proměnnou env.OWNER_LOWER
           tags: |
-            ghcr.io/${{ github.repository_owner }}/praxe-demo6-frontend:${{ env.TAG }}
-            ghcr.io/${{ github.repository_owner }}/praxe-demo6-frontend:latest
+            ghcr.io/${{ env.OWNER_LOWER }}/praxe-demo67-frontend:${{ env.TAG }}
+            ghcr.io/${{ env.OWNER_LOWER }}/praxe-demo67-frontend:latest

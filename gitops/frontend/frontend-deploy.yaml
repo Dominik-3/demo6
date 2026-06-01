@@ -17,9 +17,10 @@ spec:
     spec:
       containers:
         - name: dominik-fe
-          image: ghcr.io/dominik-3/praxe-demo67:latest
+          image: ghcr.io/dominik-3/praxe-demo67-frontend:latest
           ports:
             - containerPort: 8080
+
 
 ---
 
@@ -28,12 +29,10 @@ kind: Service
 metadata:
   name: dominik-svc
   namespace: praxe2026
-  labels:
-    app: dominik-fe
 spec:
   selector:
-    app: dominik-fe
+    app: dominik
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 4200

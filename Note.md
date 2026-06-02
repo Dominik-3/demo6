@@ -30,5 +30,9 @@ docker push ghcr.io/dominik-3/praxe-backend:vX.Y.Z
 kubectl apply -f ./gitops/demo/
 ```
 ```
-kubectl apply -f ./gitops/frontend/frontend-eploy.yaml
+kubectl apply -f ./gitops/frontend/frontend-deploy.yaml
 ```
+
+
+
+tutu nunu

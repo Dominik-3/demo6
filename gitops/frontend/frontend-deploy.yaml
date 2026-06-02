@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: dominik-svc
+  name: dominik-fe-svc
   namespace: praxe2026
 spec:
   selector:

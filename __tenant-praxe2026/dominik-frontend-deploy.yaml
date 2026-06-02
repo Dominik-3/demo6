@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: ghcr.io/praxe-demo67-frontend:latest
+          image: ghcr.io/dominik-3/praxe-demo67-frontend:latest
           ports:
             - containerPort: 4200
 ---

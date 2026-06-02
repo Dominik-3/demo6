@@ -32,7 +32,3 @@ kubectl apply -f ./gitops/demo/
 ```
 kubectl apply -f ./gitops/frontend/frontend-deploy.yaml
 ```
-
-
-
-tutu nunu 2

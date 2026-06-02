@@ -9,6 +9,6 @@ resources:
   - step05-role.yaml
   - step06-rolebindings.yaml
   - step07-tokens.yaml
-  - jakub-deploy.yaml
-  - jakub-frontend-deploy.yaml
+  - dominik-deploy.yaml
+  - dominik-frontend-deploy.yaml
   - dominik-deploy.yaml

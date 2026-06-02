@@ -1,5 +1,34 @@
-docker docs
+# docker.com
 
-docker.com
 
-ahojky
+
+## příkazy
+
+---
+
+### docker
+
+```
+docker compose up fronend-dev backend-dev maven
+```
+```
+docker build -t ghcr.io/dominik-3/praxe-frontend:vX.Y.Z ./src/main/frontend/
+```
+```
+docker build -t ghcr.io/dominik-3/praxe-backend:vX.Y.Z ./
+```
+```
+docker push ghcr.io/dominik-3/praxe-frontend:vX.Y.Z
+```
+```
+docker push ghcr.io/dominik-3/praxe-backend:vX.Y.Z
+```
+---
+
+### kubectl
+```
+kubectl apply -f ./gitops/demo/
+```
+```
+kubectl apply -f ./gitops/frontend/frontend-eploy.yaml
+```

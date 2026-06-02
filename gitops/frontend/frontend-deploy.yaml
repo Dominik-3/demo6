@@ -18,6 +18,7 @@ spec:
       containers:
         - name: dominik-fe
           image: ghcr.io/dominik-3/praxe-demo67-frontend:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 

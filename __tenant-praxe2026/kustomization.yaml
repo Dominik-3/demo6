@@ -11,4 +11,3 @@ resources:
   - step07-tokens.yaml
   - dominik-deploy.yaml
   - dominik-frontend-deploy.yaml
-  - dominik-deploy.yaml

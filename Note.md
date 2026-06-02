@@ -35,4 +35,4 @@ kubectl apply -f ./gitops/frontend/frontend-deploy.yaml
 
 
 
-tutu nunu
+tutu nunu 2

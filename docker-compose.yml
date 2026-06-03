@@ -1,4 +1,24 @@
 services:
+  mysql:
+    image: mysql:8.4
+    container_name: demo67-mysql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: RootPass1!
+      MYSQL_DATABASE: demo67db
+      MYSQL_USER: demo67admin
+      MYSQL_PASSWORD: Demo67Pass1!
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "demo67admin", "-pDemo67Pass1!" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   maven:
     image: maven:3.9-eclipse-temurin-21
     container_name: demo-maven
@@ -17,6 +37,14 @@ services:
     container_name: spring-backend
     ports:
       - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/demo67db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC"
+      SPRING_DATASOURCE_USERNAME: demo67admin
+      SPRING_DATASOURCE_PASSWORD: Demo67Pass1!
+    depends_on:
+      mysql:
+        condition: service_healthy
+    command: mvn spring-boot:run
 
   frontend:
     build:
@@ -53,3 +81,4 @@ services:
 
 volumes:
   maven-repo:
+  mysql-data:

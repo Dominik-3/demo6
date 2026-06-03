@@ -1,5 +1,5 @@
-package com.claivent.demo6;
-import com.claivent.demo6.model.Contakt;
+package com.claivent.demo67;
+import com.claivent.demo67.model.Contakt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;

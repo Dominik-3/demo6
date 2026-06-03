@@ -3,14 +3,14 @@
 
 Po každém `git push` do větve `master` kde jsou změny ve složce `frontend/` GitHub Actions automaticky:
 1. Sestaví Docker image Angular aplikace
-2. Nahraje ho do GitHub Container Registry jako `ghcr.io/<username>/praxe-demo6-frontend:latest`
+2. Nahraje ho do GitHub Container Registry jako `ghcr.io/<username>/praxe-demo67-frontend:latest`
 
 ---
 
 ## Co je připraveno
 
 ```
-demo6/
+demo67/
 ├── .github/
 │   └── workflows/
 │       ├── build-and-push.yml           ✓ backend
@@ -76,8 +76,8 @@ Průběh sleduj na GitHubu → záložka **Actions** → `Build and Push Fronten
 ## Výsledný image
 
 ```
-ghcr.io/<tvuj-github-username>/praxe-demo6-frontend:latest
-ghcr.io/<tvuj-github-username>/praxe-demo6-frontend:<commit-sha>
+ghcr.io/<tvuj-github-username>/praxe-demo67-frontend:latest
+ghcr.io/<tvuj-github-username>/praxe-demo67-frontend:<commit-sha>
 ```
 
 Najdeš ho na: **github.com → tvůj profil → záložka Packages**
@@ -87,8 +87,8 @@ Najdeš ho na: **github.com → tvůj profil → záložka Packages**
 ## Spuštění kontejneru lokálně
 
 ```bash
-docker pull ghcr.io/<username>/praxe-demo6-frontend:latest
-docker run -p 4200:4200 ghcr.io/<username>/praxe-demo6-frontend:latest
+docker pull ghcr.io/<username>/praxe-demo67-frontend:latest
+docker run -p 4200:4200 ghcr.io/<username>/praxe-demo67-frontend:latest
 ```
 
 Aplikace běží na: `http://localhost:4200`
@@ -131,22 +131,22 @@ jobs:
           context: ./frontend    # Dockerfile je ve složce frontend/
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/praxe-demo6-frontend:${{ env.TAG }}
-            ghcr.io/${{ github.repository_owner }}/praxe-demo6-frontend:latest
+            ghcr.io/${{ github.repository_owner }}/praxe-demo67-frontend:${{ env.TAG }}
+            ghcr.io/${{ github.repository_owner }}/praxe-demo67-frontend:latest
 ```
 
 ---
 
 ## Rozdíl mezi backend a frontend workflow
 
-| | Backend | Frontend |
-|--|---------|----------|
-| Workflow soubor | `build-and-push.yml` | `build-and-push-frontend.yml` |
-| Spouští se při změně | cokoliv | pouze `frontend/**` |
-| Dockerfile | `./Dockerfile` | `./frontend/Dockerfile` |
-| Base image | `maven` + `eclipse-temurin:21-jre` | `node:20-alpine` |
-| Port | 8080 | 4200 |
-| Image name | `praxe-demo6` | `praxe-demo6-frontend` |
+| | Backend                            | Frontend                      |
+|--|------------------------------------|-------------------------------|
+| Workflow soubor | `build-and-push.yml`               | `build-and-push-frontend.yml` |
+| Spouští se při změně | cokoliv                            | pouze `frontend/**`           |
+| Dockerfile | `./Dockerfile`                     | `./frontend/Dockerfile`       |
+| Base image | `maven` + `eclipse-temurin:21-jre` | `node:20-alpine`              |
+| Port | 8080                               | 4200                          |
+| Image name | `praxe-demo67`                     | `praxe-demo67-frontend`       |
 
 ---
 

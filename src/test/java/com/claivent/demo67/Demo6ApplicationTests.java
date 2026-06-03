@@ -1,10 +1,10 @@
-package com.claivent.demo6;
+package com.claivent.demo67;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Demo6ApplicationTests {
+class Demo67ApplicationTests {
 
   @Test
   void contextLoads() {

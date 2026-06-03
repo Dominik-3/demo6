@@ -1,4 +1,4 @@
-# GitHub Actions — návod pro demo6
+# GitHub Actions — návod pro demo67
 **Jak automaticky sestavit a nahrát Docker image po každém commitu**
 
 Tento repozitář má připravený workflow soubor v `.github/workflows/build-and-push.yml`.  
@@ -13,7 +13,7 @@ Vše **zdarma** na GitHub Free plánu.
 ## Co je již připraveno
 
 ```
-demo6/
+demo67/
 ├── .github/
 │   └── workflows/
 │       └── build-and-push.yml   ✓ připraveno
@@ -90,8 +90,8 @@ Workflow se spustí automaticky. Průběh sleduj na GitHubu → záložka **Acti
 Po úspěšném buildu je image dostupný jako:
 
 ```
-ghcr.io/<tvuj-github-username>/praxe-demo6:latest
-ghcr.io/<tvuj-github-username>/praxe-demo6:<commit-sha>
+ghcr.io/<tvuj-github-username>/praxe-demo67:latest
+ghcr.io/<tvuj-github-username>/praxe-demo67:<commit-sha>
 ```
 
 Najdeš ho na: **github.com → tvůj profil → záložka Packages**
@@ -109,12 +109,12 @@ GitHub spustí runner (Ubuntu, zdarma)
         ├── 1. Checkout kódu
         ├── 2. Login do ghcr.io pomocí GHCR_TOKEN
         ├── 3. Získání SHA commitu (např. "a1b2c3d")
-        ├── 4. docker build -t ghcr.io/.../praxe-demo6:a1b2c3d .
-        └── 5. docker push ghcr.io/.../praxe-demo6:a1b2c3d
+        ├── 4. docker build -t ghcr.io/.../praxe-demo67:a1b2c3d .
+        └── 5. docker push ghcr.io/.../praxe-demo67:a1b2c3d
                         │
                         ▼
-        ghcr.io/<username>/praxe-demo6:a1b2c3d  ✓
-        ghcr.io/<username>/praxe-demo6:latest   ✓
+        ghcr.io/<username>/praxe-demo67:a1b2c3d  ✓
+        ghcr.io/<username>/praxe-demo67:latest   ✓
 ```
 
 ---
@@ -153,8 +153,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/praxe-demo6:${{ env.TAG }}
-            ghcr.io/${{ github.repository_owner }}/praxe-demo6:latest
+            ghcr.io/${{ github.repository_owner }}/praxe-demo67:${{ env.TAG }}
+            ghcr.io/${{ github.repository_owner }}/praxe-demo67:latest
 ```
 
 ---

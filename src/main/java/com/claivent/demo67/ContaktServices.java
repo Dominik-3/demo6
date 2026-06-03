@@ -1,6 +1,6 @@
-package com.claivent.demo6;
+package com.claivent.demo67;
 
-import com.claivent.demo6.model.Contakt;
+import com.claivent.demo67.model.Contakt;
 import org.springframework.stereotype.Service;
 import java.util.List;
 

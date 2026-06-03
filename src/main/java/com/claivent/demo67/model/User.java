@@ -1,4 +1,4 @@
-package com.claivent.demo6.model;
+package com.claivent.demo67.model;
 
 public class User {
   private Long id;

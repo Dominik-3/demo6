@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mysql-init-sql
-  namespace: mentors
+  namespace: praxe2026
 data:
   01-schema.sql: |
     SET NAMES utf8mb4;

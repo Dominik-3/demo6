@@ -40,9 +40,9 @@ spec:
                   name: mysql-secret
                   key: password
           volumeMounts:
-            - name: mysql-data
+            - name: mysql-data2
               mountPath: /var/lib/mysql
-            - name: mysql-init
+            - name: mysql-init2
               mountPath: /docker-entrypoint-initdb.d
           readinessProbe:
             exec:
@@ -57,21 +57,21 @@ spec:
             initialDelaySeconds: 15
             periodSeconds: 10
       volumes:
-        - name: mysql-data
+        - name: mysql-data2
           persistentVolumeClaim:
-            claimName: mysql-pvc
-        - name: mysql-init
+            claimName: dominik-mysql-pvc
+        - name: mysql-init2
           configMap:
             name: mysql-init-sql
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: mentor-mysql
-  namespace: mentors
+  name: dominik-mysql
+  namespace: praxe2026
 spec:
   selector:
-    app: mentor-mysql
+    app: dominik-mysql
   ports:
     - port: 3306
       targetPort: 3306

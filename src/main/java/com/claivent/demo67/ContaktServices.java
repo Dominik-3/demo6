@@ -9,7 +9,7 @@ public class ContaktServices {
 
     public List<Contakt> getContakts() {
         return List.of(
-            new Contakt("Jan Novák",   "jan@example.com", "123456789"),
+            new Contakt("Jan Nevák",   "jan@example.com", "123456789"),
             new Contakt("Petra Malá",  "petra@example.com", "987654321"),
             new Contakt("Tomáš Vlček", "tomas@example.com", "555555555")
         );

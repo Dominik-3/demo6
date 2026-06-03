@@ -22,22 +22,22 @@ spec:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mysql-secret
+                  name: dominik-mysql-secret
                   key: root-password
             - name: MYSQL_DATABASE
               valueFrom:
                 secretKeyRef:
-                  name: mysql-secret
+                  name: dominik-mysql-secret
                   key: database
             - name: MYSQL_USER
               valueFrom:
                 secretKeyRef:
-                  name: mysql-secret
+                  name: dominik-mysql-secret
                   key: username
             - name: MYSQL_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mysql-secret
+                  name: dominik-mysql-secret
                   key: password
           volumeMounts:
             - name: mysql-data2
@@ -62,7 +62,7 @@ spec:
             claimName: dominik-mysql-pvc
         - name: mysql-init2
           configMap:
-            name: mysql-init-sql
+            name: dominik-mysql-init-sql
 ---
 apiVersion: v1
 kind: Service

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: mysql-init-sql
+  name: dominik-mysql-init-sql
   namespace: praxe2026
 data:
   01-schema.sql: |

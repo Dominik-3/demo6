@@ -8,5 +8,6 @@ public class Demo67Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Demo67Application.class, args);
+        //verze 1.0.0
     }
 }

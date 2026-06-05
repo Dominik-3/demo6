@@ -7,8 +7,8 @@ import { User } from '../../../user.model';
   selector: 'app-user-del',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './user.del.component.html',
-  styleUrl: './user.del.component.css',
+  templateUrl: './del.users.component.html',
+  styleUrl: './del.users.component.css',
 })
 export class UserDelComponent {
   message = '';

@@ -8,8 +8,8 @@ import { User } from '../../../user.model';
   selector: 'app-user-modify',
   standalone: true,
   imports: [FormsModule, CommonModule],
-  templateUrl: './user.modify.component.html',
-  styleUrl: './user.modify.component.css',
+  templateUrl: './modify.users.component.html',
+  styleUrl: './modify.users.component.css',
 })
 export class UserModifyComponent {
   id: number = 0;

@@ -7,8 +7,8 @@ import {UserService} from '../../../user.service';
   selector: 'app-user-add',
   standalone: true,
   imports: [FormsModule, CommonModule],
-  templateUrl: './user.add.component.html',
-  styleUrl: './user.add.component.css',
+  templateUrl: './add.users.component.html',
+  styleUrl: './add.users.component.css',
 })
 export class UserAddComponent {
   name = '';

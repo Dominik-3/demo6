@@ -5,7 +5,7 @@ import {Contakt} from './contakt.model';
 
 @Injectable({providedIn: 'root',})
 export class ContaktService {
-  private apiUrl = 'http://8080/api/contakts';
+  private apiUrl = 'http://localhost:8080/api/contakts';
 
   constructor(private http: HttpClient) {}
 

@@ -5,7 +5,7 @@ import { User } from './user.model';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private base = '/api/db';
+  private base = 'http://8080/api/db';
 
   constructor(private http: HttpClient) {}
 

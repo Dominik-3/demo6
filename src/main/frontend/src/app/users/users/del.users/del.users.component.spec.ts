@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserDelComponent } from './user.del.component';
+import { UserDelComponent } from './del.users.component';
 
 describe('UserDelComponent', () => {
   let component: UserDelComponent;
